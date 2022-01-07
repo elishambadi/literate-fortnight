@@ -1,6 +1,14 @@
+import {Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity()
 export class Todo {
+    @PrimaryGeneratedColumn()
     public id: number;
+
+    @Column()
     public title: string;
+
+    @Column('bool')
     public completed: boolean;
 
     public constructor(title: string){

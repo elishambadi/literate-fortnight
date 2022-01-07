@@ -5,14 +5,16 @@ import { AppService } from './app.service';
 import * as path from 'path';
 import { TodoModule } from './todo/todo.module';
 
+// Similar to main class in Java
 @Module({
-  imports: [TodoModule, 
+  imports: [
     TypeOrmModule.forRoot({
       type : 'sqlite',
       autoLoadEntities: true,
       synchronize: true,
-      database: path.resolve(__dirname, '..', db.sqlite)
-    })
+      database: path.resolve(__dirname, '..', 'db.sqlite')
+    }),
+    TodoModule
    ],
   controllers: [AppController],
   providers: [AppService],
