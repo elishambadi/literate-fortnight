@@ -1,3 +1,5 @@
+import { IsNotEmpty, IsString, IsBoolean} from 'class-validator';
+
 // DTOs - Data Transfer Objects
 export class AddTodoDto {
     public readonly title: string;
@@ -9,7 +11,11 @@ export class AddTodoDto {
 }
 
 export class EditTodoDto{
+    @IsString()
+    @IsNotEmpty()
     public readonly title: string;
+
+    @IsBoolean()
     public readonly completed: boolean;
 
     public constructor(opts?: Partial<EditTodoDto>){
