@@ -8,7 +8,7 @@ export class Todo {
     @Column()
     public title: string;
 
-    @Column('bool')
+    @Column('boolean')
     public completed: boolean;
 
     public constructor(title: string){
