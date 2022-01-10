@@ -7,6 +7,7 @@ async function bootstrap() {
 
   // Adding a validation pipe
   app.useGlobalPipes(new ValidationPipe({transform:true}));
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();

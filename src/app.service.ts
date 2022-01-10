@@ -7,6 +7,6 @@ export class AppService {
   }
 
   getShoes1(): string {
-    return ('Here are your shoes');
+    return 'Come get your shoes';
   }
 }

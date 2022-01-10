@@ -8,11 +8,15 @@ export class Todo {
     @Column()
     public title: string;
 
-    @Column('boolean')
+    @Column()
+    public taskDate: Date;
+
+    @Column()
     public completed: boolean;
 
-    public constructor(title: string){
+    public constructor(title: string, taskDate: Date){
         this.title = title;
+        this.taskDate = new Date(taskDate);
         this.completed = false;
     }
 }

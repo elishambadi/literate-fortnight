@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import * as path from 'path';
 import { TodoModule } from './todo/todo.module';
+import { RouterModule } from '@nestjs/core';
 
 // Similar to main class in Java
 @Module({
@@ -14,7 +15,7 @@ import { TodoModule } from './todo/todo.module';
       synchronize: true,
       database: path.resolve(__dirname, '..', 'db.sqlite')
     }),
-    TodoModule
+    TodoModule,
    ],
   controllers: [AppController],
   providers: [AppService],

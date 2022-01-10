@@ -1,8 +1,13 @@
-import { IsNotEmpty, IsString, IsBoolean} from 'class-validator';
+import { IsNotEmpty, IsString, IsBoolean, IsDate} from 'class-validator';
 
 // DTOs - Data Transfer Objects
 export class AddTodoDto {
+    @IsString()
+    @IsNotEmpty()
     public readonly title: string;
+
+    // @IsDate()
+    public readonly taskDate: Date;
 
     public constructor(opts?: Partial<AddTodoDto>){
         // Assign unknown parameters to object
@@ -15,7 +20,10 @@ export class EditTodoDto{
     @IsNotEmpty()
     public readonly title: string;
 
-    @IsBoolean()
+    // @IsDate()
+    public readonly taskDate: Date;
+
+    // @IsBoolean()
     public readonly completed: boolean;
 
     public constructor(opts?: Partial<EditTodoDto>){
@@ -26,6 +34,7 @@ export class EditTodoDto{
 export class TodoDto{
     public readonly id: number;
     public readonly title: string;
+    public readonly taskDate: Date;
     public readonly completed: boolean;
 
     public constructor(opts?: Partial<TodoDto>){
